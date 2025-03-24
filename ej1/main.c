@@ -58,6 +58,9 @@ int main(int argc, char *argv[]) {
   int copy[MAX_SIZE];
   array_copy(copy, array, length);
 
+  /* show the initial array in the screen */
+  array_dump(array, length);
+
   /* do the actual sorting */
   insertion_sort(array, length);
 
