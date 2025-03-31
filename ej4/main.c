@@ -64,11 +64,13 @@ int main(int argc, char *argv[]) {
     set_current_time();
 
     /* do the actual sorting */
+    printf("SELECTION_SORT");
     selection_sort(copy, length);
 
     /* show statistics for selection_sort */
     printf("statistics for selection_sort\n");
     printf("time elapsed=%g,    comparisons: %10u,    swaps: %10u\n", calculate_elapsed_time(), comparisons_number(), swaps_number());
+    printf("\n\n\n");
 
     /* all the same for insertion_sort */
     /* Usando la idea de las líneas de códigos anteriores
@@ -78,6 +80,22 @@ int main(int argc, char *argv[]) {
     */
     /* needs implementation */
 
+    /* create a copy of the array */
+    array_copy(copy, array, length);
+
+    /* reset counters and set time */
+    reset_comparisons_counter();
+    reset_swaps_counter();
+    set_current_time();
+
+    /* do the actual sorting */
+    printf("INSERTION_SORT");
+    insertion_sort(copy, length);
+
+    /* show statistics for insertion_sort */
+    printf("statistics for insertion_sort\n");
+    printf("time elapsed=%g,    comparisons: %10u,    swaps: %10u\n", calculate_elapsed_time(), comparisons_number(), swaps_number());
+    printf("\n\n\n");
 
     /* all the same for quick_sort */
     /* Usando la idea de las líneas de códigos anteriores
@@ -87,7 +105,21 @@ int main(int argc, char *argv[]) {
     */
     /* needs implementation */
 
+    /* create a copy of the array */
+    array_copy(copy, array, length);
 
+    /* reset counters and set time */
+    reset_comparisons_counter();
+    reset_swaps_counter();
+    set_current_time();
+
+    /* do the actual sorting */
+    printf("QUICK_SORT");
+    quick_sort(copy, length);
+
+    /* show statistics for quick_sort */
+    printf("statistics for quick_sort\n");
+    printf("time elapsed=%g,    comparisons: %10u,    swaps: %10u\n", calculate_elapsed_time(), comparisons_number(), swaps_number());
 
     return EXIT_SUCCESS;
 }
